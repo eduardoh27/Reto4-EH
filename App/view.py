@@ -35,9 +35,21 @@ operación solicitada
 """
 
 def printMenu():
-    print("Bienvenido")
-    print("1- Cargar información en el catálogo")
-    print("2- ")
+    print("\nBienvenido")
+    print("1- Inicializar Analizador")
+    print("2- Cargar información en el catálogo")
+    print("3- Req. 1: Identificar los clústeres de comunicación")
+    print("4- Req. 2: Identificar los puntos de conexión críticos de la red")
+    print("5- Req. 3: La ruta de menor distancia")
+    print("6- Req. 4: Identificar la Infraestructura Crítica de la Red")
+    print("7- Req. 5: Análisis de fallas ")
+    print("8- Req. 6: Los mejores canales para transmitir")
+    print("9- Req. 7: La mejor ruta para comunicarme ")
+    print("10- Req. 8: Graficando los Grafos ")
+
+
+
+
 
 catalog = None
 
