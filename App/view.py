@@ -58,7 +58,7 @@ def loadData(catalog):
     """
     Carga los datos en la estructura de datos
     """
-    return controller.loadData(catalog)
+    controller.loadData(catalog)
 
 
 
@@ -72,9 +72,11 @@ while True:
     inputs = input('Seleccione una opción para continuar\n')
     if int(inputs[0]) == 1:
         print("Cargando información de los archivos ....")
+        catalog = initCatalog()
 
     elif int(inputs[0]) == 2:
-        pass
+        loadData(catalog)
+        #print(catalog["points"])
 
     else:
         sys.exit(0)

@@ -42,27 +42,31 @@ def initCatalog():
 # Funciones para la carga de datos
 
 def loadData(catalog):
-    delta_time = -1.0
-    delta_memory = -1.0
 
-    tracemalloc.start()
-    start_time = getTime()
-    start_memory = getMemory()
+    loadPoints(catalog)
+    loadConexiones(catalog)
+    ConectarPointsIguales(catalog)
+    ConectarCablesIguales(catalog)
 
-    loadEventos(catalog)
-    loadTracks(catalog)
-    loadHashtags(catalog)
+def loadPoints(catalog):
+    """
+    Carga los eventos del archivo. Por cada evento se toma los datos necesarios:
+    instrumentalness,  danceability, tempo, energy, id del artista, id de la pista, 
+    y fecha de publicación.
+    """
+    videosfile = cf.data_dir + 'landing_points.csv'
+    
+    input_file = csv.DictReader(open(videosfile, encoding='utf-8'))
+    for point in input_file:
+        cada_point = {"landing_point_id": point["landing_point_id"],
+                    "location": point["name"].split(","),
+                    "latitude": float(point["latitude"]),
+                    "longitude": float(point["longitude"])
+                  }       
 
-    stop_memory = getMemory()
-    stop_time = getTime()
-    tracemalloc.stop()
+        model.addPoint(catalog, cada_point)
 
-    delta_time = stop_time - start_time
-    delta_memory = deltaMemory(start_memory, stop_memory)
-
-    return delta_time, delta_memory
-
-def loadEventos(catalog):
+def loadConexiones(catalog):
     """
     Carga los eventos del archivo. Por cada evento se toma los datos necesarios:
     instrumentalness,  danceability, tempo, energy, id del artista, id de la pista, 
@@ -70,16 +74,36 @@ def loadEventos(catalog):
     """
     videosfile = cf.data_dir + 'connections.csv'
     
-    input_file = csv.DictReader(open(videosfile, encoding='utf-8'))
-    for evento in input_file:
-        cada_evento = {"instrumentalness": float(evento["instrumentalness"]),
-                  "danceability": float(evento["danceability"]),
-                  "tempo": float(evento["tempo"]),
-                  "energy": float(evento["energy"]),
-                  "artist_id": evento["artist_id"],
-                  "track_id": evento["track_id"],
-                  "time": datetime.datetime.strptime(evento["created_at"], '%Y-%m-%d %H:%M:%S').time(),
-                  "user_id": evento["user_id"],
-                  "id": evento["id"]
+    input_file = csv.DictReader(open(videosfile, encoding='utf-8-sig'))
+    i = 1
+    for conexion in input_file:
+        if i%2 != 0:
+            cada_conexion = {"origin": conexion["origin"],
+                        "destination": conexion["destination"],
+                        "cable_id": conexion["cable_id"]
+                    }       
+            i += 1
+            model.addConexion(catalog, cada_conexion)
+
+
+def loadCountries(catalog):
+    """
+    Carga los eventos del archivo. Por cada evento se toma los datos necesarios:
+    instrumentalness,  danceability, tempo, energy, id del artista, id de la pista, 
+    y fecha de publicación.
+    """
+    videosfile = cf.data_dir + 'countries.csv'
+    
+    input_file = csv.DictReader(open(videosfile, encoding='utf-8-sig'))
+    for country in input_file:
+        cada_country = {"country": conexion["Country Name"],
+                    "capital": conexion["Capital Name"]
                   }       
-        model.addEvento(catalog, cada_evento)
+
+        model.addCountry(catalog, cada_country)
+
+def ConectarPointsIguales(catalog):
+    model.ConectarPointsIguales(catalog)
+
+def ConectarCablesIguales(catalog):
+    model.ConectarCablesIguales(catalog)
