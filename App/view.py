@@ -48,6 +48,17 @@ def printMenu():
     print("10- Req. 8: Graficando los Grafos ")
 
 
+def initCatalog():
+    """
+    Inicializa el catálogo de eventos
+    """
+    return controller.initCatalog()
+
+def loadData(catalog):
+    """
+    Carga los datos en la estructura de datos
+    """
+    return controller.loadData(catalog)
 
 
 

@@ -37,14 +37,15 @@ Se define la estructura de un catálogo de videos. El catálogo tendrá dos list
 los mismos.
 """
 
-# Construccion de modelos
+def newCatalog():
+    """ Inicializa el catálogo
 
-# Funciones para agregar informacion al catalogo
+    Crea un diccionario cuyos valores serán las estructuras de datos.
+    Se crea un Ordered Map para cada característica de contenido utilizada.
+    Además, se crea un Map para las pistas y otro Map los hashtags.
 
-# Funciones para creacion de datos
-
-# Funciones de consulta
-
-# Funciones utilizadas para comparar elementos dentro de una lista
-
-# Funciones de ordenamiento
+    Retorna el catálogo inicializado.
+    """
+    catalog = {
+                }
+    return catalog
