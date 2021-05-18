@@ -50,7 +50,9 @@ def newCatalog():
     """
     catalog = {"conexiones":None,
                 "points":None,
-                "ciudades":None}
+                "ciudades":None,
+                "countries":None,
+                "cables":None}
 
     catalog["conexiones"] = gr.newGraph(datastructure='ADJ_LIST',
                                             directed=False,
@@ -121,11 +123,6 @@ def addConexion(catalog, conexion):
 
     latitud1 = lt.getElement((me.getValue(mp.get(catalog["points"], conexion["origin"]))),-1)
     longitud1 = lt.lastElement(me.getValue(mp.get(catalog["points"], conexion["origin"])))
-    #valor_0 = lt.getElement((me.getValue(mp.get(catalog["points"], conexion["origin"]))),0)
-    #valor_1 = lt.getElement((me.getValue(mp.get(catalog["points"], conexion["origin"]))),1)
-    #valor_menos2 = lt.getElement((me.getValue(mp.get(catalog["points"], conexion["origin"]))),-2)
-    #[[lista_vertices], pais, latitud, longitud]
-    #print(latitud1, longitud1, valor_0, valor_1, valor_menos2)
 
     latitud2 = lt.getElement((me.getValue(mp.get(catalog["points"], conexion["destination"]))),-1)
     longitud2 = lt.lastElement(me.getValue(mp.get(catalog["points"], conexion["destination"])))
@@ -180,28 +177,7 @@ def ConectarCablesIguales(catalog):
                 j += 1
             i += 1
 
-"""
-[a,b,c,d]
-i=1 j=2
-v = a v1 = b
 
-i=1 j=3
-v= a v1 = c
-
-i=1 j=4
-v= a v1 = d
-
-i = 2 j = 3
-v= b j= c
-
-i= 2 j= 4
-v = b j= d
-
-i=3 j= 4
-v = c j= d
-
-i = 4 j = 5
-"""
 
 #Nota: getElement(lista, 0) es igual a lastElement
 #getElement(lista, -1) es como [-2], obtiene la penúltima pos

@@ -61,7 +61,6 @@ def loadData(catalog):
     controller.loadData(catalog)
 
 
-
 catalog = None
 
 """
@@ -71,12 +70,12 @@ while True:
     printMenu()
     inputs = input('Seleccione una opción para continuar\n')
     if int(inputs[0]) == 1:
-        print("Cargando información de los archivos ....")
+        print("\nInicializando....")
         catalog = initCatalog()
 
     elif int(inputs[0]) == 2:
+        print("Cargando información de los archivos ....")
         loadData(catalog)
-        #print(catalog["points"])
 
     else:
         sys.exit(0)
