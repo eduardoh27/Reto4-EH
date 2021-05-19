@@ -92,8 +92,8 @@ def addConexion(catalog, conexion):
     point_salida = conexion["origin"]
     point_llegada = conexion["destination"]
 
-    vertice_salida = conexion["origin"]+"-"+conexion["cable_id"]
-    vertice_llegada = conexion["destination"]+"-"+conexion["cable_id"]
+    vertice_salida = conexion["origin"]+"-"+conexion["cable_name"]
+    vertice_llegada = conexion["destination"]+"-"+conexion["cable_name"]
 
     #Añade el vertice a la lista de vertices del mapa de points
     lista_pais_lati_long_listavertices = me.getValue(mp.get(catalog["points"], point_salida))
@@ -105,10 +105,10 @@ def addConexion(catalog, conexion):
     mp.put(mapa_vertices1, vertice_llegada, None)
 
     #Añade el vertice al mapa de cables
-    exist_cable = mp.contains(catalog["cables"], conexion["cable_id"])
+    exist_cable = mp.contains(catalog["cables"], conexion["cable_name"])
     
     if exist_cable:
-        mapa_vertices2 = me.getValue(mp.get(catalog["cables"], conexion["cable_id"]))
+        mapa_vertices2 = me.getValue(mp.get(catalog["cables"], conexion["cable_name"]))
         mp.put(mapa_vertices2, vertice_llegada, None)
         mp.put(mapa_vertices2, vertice_salida, None)
     
@@ -116,7 +116,7 @@ def addConexion(catalog, conexion):
         nuevo_mapa = mp.newMap(numelements=100, maptype="PROBING", loadfactor=0.4)
         mp.put(nuevo_mapa, vertice_llegada, None)
         mp.put(nuevo_mapa, vertice_salida, None)
-        mp.put(catalog["cables"], conexion["cable_id"], nuevo_mapa)
+        mp.put(catalog["cables"], conexion["cable_name"], nuevo_mapa)
 
     gr.insertVertex(catalog["conexiones"], vertice_salida)
     gr.insertVertex(catalog["conexiones"], vertice_llegada)
