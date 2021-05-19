@@ -61,14 +61,16 @@ def newCatalog():
                                             size=4000
                                             )
 
-    catalog["points"] = mp.newMap(numelements=1500, maptype="PROBING", loadfactor=0.4)
+    catalog["points"] = mp.newMap(numelements=100, maptype="PROBING", loadfactor=0.4)
     catalog["ciudades"] = mp.newMap(numelements=1500, maptype="PROBING", loadfactor=0.4)
 
-    catalog["countries"] = mp.newMap(numelements=300, maptype="PROBING", loadfactor=0.4)
+    catalog["countries_capitales"] = mp.newMap(numelements=300, maptype="PROBING", loadfactor=0.4)
 
     catalog["cables"] = mp.newMap(numelements=200, maptype="PROBING", loadfactor=0.4)
     catalog["ancho"] = mp.newMap(numelements=2000, maptype="PROBING", loadfactor=0.4)
     catalog["anchos_landing"] = mp.newMap(numelements=2000, maptype="PROBING", loadfactor=0.4)
+
+    catalog["countries"] = mp.newMap(numelements=300, maptype="PROBING", loadfactor=0.4)
 
 
     return catalog
@@ -79,7 +81,7 @@ def addPoint(catalog, point):
     lista_ubicacion = lt.newList(datastructure="ARRAY_LIST")
     ciudad = point["location"][0]
     pais = point["location"][-1]
-    mapa_vertices = mp.newMap(numelements=200, maptype="PROBING", loadfactor=0.4)
+    mapa_vertices = mp.newMap(numelements=2, maptype="PROBING", loadfactor=0.4)
     lt.addLast(lista_ubicacion, mapa_vertices)
     lt.addLast(lista_ubicacion, pais)
     lt.addLast(lista_ubicacion, point["latitude"])
@@ -91,6 +93,10 @@ def addPoint(catalog, point):
     
     #Se agrega a otro mapa otra info
     mp.put(catalog["ciudades"], ciudad, point["landing_point_id"])
+
+
+
+
 
 def addConexion(catalog, conexion):
 
@@ -107,26 +113,26 @@ def addConexion(catalog, conexion):
     mp.put(catalog["ancho"],llave_ancho1,ancho)
 
     if mp.contains(catalog["anchos_landing"],point_salida):
-        cola = me.getValue(mp.get(catalog["anchos_landing"]))
+        cola = me.getValue(mp.get(catalog["anchos_landing"], point_salida))
         pq.insert(cola,ancho)
     else:
-        cola = pq.newMinPQ()
+        cola = pq.newMinPQ(cmpfunction_minPQ)
         pq.insert(cola,ancho)
         mp.put(catalog["anchos_landing"],point_salida,cola)
 
+
     if mp.contains(catalog["anchos_landing"],point_llegada):
-        cola = me.getValue(mp.get(catalog["anchos_landing"]))
+        cola = me.getValue(mp.get(catalog["anchos_landing"], point_llegada))
         pq.insert(cola,ancho)
     else:
-        cola = pq.newMinPQ()
+        cola = pq.newMinPQ(cmpfunction_minPQ)
         pq.insert(cola,ancho)
         mp.put(catalog["anchos_landing"],point_llegada,cola)
 
 
 
-
-
     #Añade el vertice a la lista de vertices del mapa de points
+
     lista_pais_lati_long_listavertices = me.getValue(mp.get(catalog["points"], point_salida))
     mapa_vertices = lt.firstElement((lista_pais_lati_long_listavertices))
     mp.put(mapa_vertices, vertice_salida, None)
@@ -134,6 +140,7 @@ def addConexion(catalog, conexion):
     lista_pais_lati_long_listavertices1 = me.getValue(mp.get(catalog["points"], point_llegada))
     mapa_vertices1 = lt.firstElement((lista_pais_lati_long_listavertices1))
     mp.put(mapa_vertices1, vertice_llegada, None)
+
 
     #Añade el vertice al mapa de cables
     exist_cable = mp.contains(catalog["cables"], conexion["cable_name"])
@@ -164,7 +171,10 @@ def addConexion(catalog, conexion):
 
 def addCountry(catalog, country):
 
-    mp.put(catalog["countries"], country["country"], country["capital"])
+    vertice_capital = country["capital"]+"-CAPITAL"
+    mp.put(catalog["countries_capitales"], country["country"], country["capital"])
+    gr.insertVertex(catalog["conexiones"], vertice_capital)
+    ConectarConCapital(catalog, vertice_capital, country["country"], country["latitude"], country["longitude"])
 
 def CalcularPeso(latitud1, longitud1, latitud2, longitud2):
 
@@ -188,9 +198,10 @@ def ConectarPointsIguales(catalog):
             while j <= tamaño:
                 vertice1 = lt.getElement(lista_vertices, j)
                 gr.addEdge(catalog["conexiones"], vertice, vertice1, weight=0.1)
+                cola = me.getValue(mp.get(catalog["anchos_landing"], point))
+                ancho = pq.min(cola)
                 llave_ancho= vertice+"/"+vertice1
                 llave_ancho1=vertice1+"/"+vertice
-                ancho = catalog[""]
                 mp.put(catalog["ancho"],llave_ancho,ancho)
                 mp.put(catalog["ancho"],llave_ancho1,ancho)
                 j += 1
@@ -214,9 +225,83 @@ def ConectarCablesIguales(catalog):
                 j += 1
             i += 1
 
-def get_landing_point(vertice)
+def ConectarConCapital(catalog, vertice_capital, pais, latitud_capital, longitud_capital):
+    existe_pais = mp.get(catalog["countries"], pais)
+
+    if existe_pais == None:
+        menor = 10000000
+        point_menor = None
+        for point in lt.iterator(mp.keySet(catalog["points"])):
+            latitud_point = lt.getElement((me.getValue(mp.get(catalog["points"], point))),-1)
+            longitud_point = lt.lastElement(me.getValue(mp.get(catalog["points"], point)))
+            distancia = CalcularPeso(latitud_point, longitud_point, latitud_capital, longitud_capital)
+            if distancia < menor:
+                menor = distancia   
+                point_menor = point
+
+        cola = me.getValue(mp.get(catalog["anchos_landing"], point_menor))
+        ancho = pq.min(cola)
+
+        mapa_vertices = lt.firstElement(me.getValue(mp.get(catalog["points"], point_menor))) 
+        for vertice in lt.iterator(mp.keySet(mapa_vertices)):
+            gr.addEdge(catalog["conexiones"], vertice, vertice_capital, weight=distancia)
+            llave_ancho= vertice+"/"+vertice_capital
+            llave_ancho1=vertice_capital+"/"+vertice
+            mp.put(catalog["ancho"],llave_ancho,ancho)
+            mp.put(catalog["ancho"],llave_ancho1,ancho)
+
+
+    else:
+        lista_points = me.getValue(mp.get(catalog["countries"], pais))
+
+        for point in lt.iterator(lista_points):
+            mapa_vertices = lt.firstElement(me.getValue(mp.get(catalog["points"], point_salida)))
+            latitud_point = lt.getElement((me.getValue(mp.get(catalog["points"], point))),-1)
+            longitud_point = lt.lastElement(me.getValue(mp.get(catalog["points"], point)))
+            distancia = CalcularPeso(latitud_point, longitud_point, latitud_capital, longitud_capital)
+            cola = me.getValue(mp.get(catalog["anchos_landing"], point))
+            ancho = pq.min(cola)
+
+
+            for vertice in lt.iterator(mp.keySet(mapa_vertices)):
+                gr.addEdge(catalog["conexiones"], vertice, vertice_capital, weight=distancia)
+                llave_ancho= vertice+"/"+vertice_capital
+                llave_ancho1=vertice_capital+"/"+vertice
+                mp.put(catalog["ancho"],llave_ancho,ancho)
+                mp.put(catalog["ancho"],llave_ancho1,ancho)
+
+def cmpfunction_minPQ (p1, p2):
+    return p1 > p2
+
+
+"""
+BORRADOR:
+
+def getLandingPoint(vertice):
+    indice = vertice.index("-")
+    return vertice[:indice]
+
+def foo(catalog):   
+    mapa_vertices = lt.firstElement(me.getValue(mp.get(catalog["points"], "3012")))
+    print(mp.size(mapa_vertices))
+    lista_vertices = mp.keySet(mapa_vertices)
+    print(lt.size(lista_vertices))
+
+def foo1():
+    cola = pq.newMinPQ(cmpfunction_minPQ)
+    pq.insert(cola, 12)
+    pq.insert(cola, 3)
+    pq.insert(cola, 324213)
+    pq.insert(cola, 123)
+    pq.insert(cola, 1)
+    pq.insert(cola, 345)
+    print(pq.min(cola))
 
 #Nota: getElement(lista, 0) es igual a lastElement
 #getElement(lista, -1) es como [-2], obtiene la penúltima pos
 
 #Revisar las repeticiones en los mapas
+
+#PROBAR CARGA 
+#PROBAR MINPQ
+"""

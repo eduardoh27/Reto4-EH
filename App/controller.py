@@ -45,6 +45,7 @@ def loadData(catalog):
 
     loadPoints(catalog)
     loadConexiones(catalog)
+    loadCountries(catalog)
     ConectarPointsIguales(catalog)
     ConectarCablesIguales(catalog)
 
@@ -61,8 +62,9 @@ def loadPoints(catalog):
         cada_point = {"landing_point_id": point["landing_point_id"],
                     "location": point["name"].split(","),
                     "latitude": float(point["latitude"]),
-                    "longitude": float(point["longitude"])
-                  }       
+                    "longitude": float(point["longitude"]),
+                    "country": (point["name"].split(","))[-1]          
+                    }       
 
         model.addPoint(catalog, cada_point)
 
@@ -82,10 +84,9 @@ def loadConexiones(catalog):
                         "destination": conexion["destination"],
                         "cable_name": conexion["cable_name"],
                         "capacityTBPS":float(conexion["capacityTBPS"])
-                        
-                    }       
-            i += 1
-            model.addConexion(catalog, cada_conexion)
+                        }       
+        i += 1
+        model.addConexion(catalog, cada_conexion)
 
 
 def loadCountries(catalog):
@@ -98,9 +99,14 @@ def loadCountries(catalog):
     
     input_file = csv.DictReader(open(videosfile, encoding='utf-8-sig'))
     for country in input_file:
-        cada_country = {"country": conexion["Country Name"],
-                    "capital": conexion["Capital Name"]
-                  }       
+        if country["CountryName"] == "":
+            pass
+        else:
+            cada_country = {"country": country["CountryName"],
+                        "capital": country["CapitalName"],
+                        "latitude": float(country["CapitalLatitude"]),
+                        "longitude": float(country["CapitalLongitude"]),
+                        }       
 
         model.addCountry(catalog, cada_country)
 
