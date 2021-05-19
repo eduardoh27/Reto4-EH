@@ -33,7 +33,7 @@ from DISClib.DataStructures import mapentry as me
 from DISClib.Algorithms.Sorting import shellsort as sa
 assert cf
 import haversine as hs
-
+from DISClib.ADT import minpq as pq
 """
 Se define la estructura de un catálogo de videos. El catálogo tendrá dos listas, una para los videos, otra para las categorias de
 los mismos.
@@ -52,7 +52,9 @@ def newCatalog():
                 "points":None,
                 "ciudades":None,
                 "countries":None,
-                "cables":None}
+                "cables":None,
+                "ancho":None,
+                "anchos_landing":None}
 
     catalog["conexiones"] = gr.newGraph(datastructure='ADJ_LIST',
                                             directed=False,
@@ -65,6 +67,9 @@ def newCatalog():
     catalog["countries"] = mp.newMap(numelements=300, maptype="PROBING", loadfactor=0.4)
 
     catalog["cables"] = mp.newMap(numelements=200, maptype="PROBING", loadfactor=0.4)
+    catalog["ancho"] = mp.newMap(numelements=2000, maptype="PROBING", loadfactor=0.4)
+    catalog["anchos_landing"] = mp.newMap(numelements=2000, maptype="PROBING", loadfactor=0.4)
+
 
     return catalog
 
@@ -94,6 +99,32 @@ def addConexion(catalog, conexion):
 
     vertice_salida = conexion["origin"]+"-"+conexion["cable_name"]
     vertice_llegada = conexion["destination"]+"-"+conexion["cable_name"]
+
+    ancho = conexion["capacityTBPS"]
+    llave_ancho= vertice_llegada+"/"+vertice_salida
+    llave_ancho1=vertice_salida+"/"+vertice_llegada
+    mp.put(catalog["ancho"],llave_ancho,ancho)
+    mp.put(catalog["ancho"],llave_ancho1,ancho)
+
+    if mp.contains(catalog["anchos_landing"],point_salida):
+        cola = me.getValue(mp.get(catalog["anchos_landing"]))
+        pq.insert(cola,ancho)
+    else:
+        cola = pq.newMinPQ()
+        pq.insert(cola,ancho)
+        mp.put(catalog["anchos_landing"],point_salida,cola)
+
+    if mp.contains(catalog["anchos_landing"],point_llegada):
+        cola = me.getValue(mp.get(catalog["anchos_landing"]))
+        pq.insert(cola,ancho)
+    else:
+        cola = pq.newMinPQ()
+        pq.insert(cola,ancho)
+        mp.put(catalog["anchos_landing"],point_llegada,cola)
+
+
+
+
 
     #Añade el vertice a la lista de vertices del mapa de points
     lista_pais_lati_long_listavertices = me.getValue(mp.get(catalog["points"], point_salida))
@@ -157,8 +188,14 @@ def ConectarPointsIguales(catalog):
             while j <= tamaño:
                 vertice1 = lt.getElement(lista_vertices, j)
                 gr.addEdge(catalog["conexiones"], vertice, vertice1, weight=0.1)
+                llave_ancho= vertice+"/"+vertice1
+                llave_ancho1=vertice1+"/"+vertice
+                ancho = catalog[""]
+                mp.put(catalog["ancho"],llave_ancho,ancho)
+                mp.put(catalog["ancho"],llave_ancho1,ancho)
                 j += 1
             i += 1
+    
 
 def ConectarCablesIguales(catalog):
 
@@ -177,7 +214,7 @@ def ConectarCablesIguales(catalog):
                 j += 1
             i += 1
 
-
+def get_landing_point(vertice)
 
 #Nota: getElement(lista, 0) es igual a lastElement
 #getElement(lista, -1) es como [-2], obtiene la penúltima pos

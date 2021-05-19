@@ -80,7 +80,9 @@ def loadConexiones(catalog):
         if i%2 != 0:
             cada_conexion = {"origin": conexion["origin"],
                         "destination": conexion["destination"],
-                        "cable_name": conexion["cable_name"]
+                        "cable_name": conexion["cable_name"],
+                        "capacityTBPS":float(conexion["capacityTBPS"])
+                        
                     }       
             i += 1
             model.addConexion(catalog, cada_conexion)
