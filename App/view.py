@@ -25,7 +25,7 @@ import sys
 import controller
 from DISClib.ADT import list as lt
 assert cf
-
+from DISClib.ADT import graph as gr
 
 """
 La vista se encarga de la interacción con el usuario
@@ -76,6 +76,25 @@ while True:
     elif int(inputs[0]) == 2:
         print("Cargando información de los archivos ....")
         loadData(catalog)
+    
+    elif int(inputs[0]) == 3:
+        g = gr.newGraph(directed=True)
+        v1 = "v1"
+        gr.insertVertex(g, v1)
+        v2 = "v2"
+        gr.insertVertex(g, v2)
+
+        v3 = "v3"
+        gr.insertVertex(g, v3)
+        v4 = "v4"
+        gr.insertVertex(g, v4)
+        v5 = "v5"
+        gr.insertVertex(g, v5)
+
+        gr.addEdge(g, v1, v2)
+        gr.addEdge(g, v2, v1)
+        gr.addEdge(g, v1, v3)
+        print(gr.degree(g, v1))
 
     else:
         sys.exit(0)
