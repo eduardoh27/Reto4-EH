@@ -43,36 +43,41 @@ def initCatalog():
 
 def loadData(catalog):
 
-    loadPoints(catalog)
+    primer_point = loadPoints(catalog)
     loadConexiones(catalog)
-    loadCountries(catalog)
+    ultimo_country = loadCountries(catalog)
     ConectarPointsIguales(catalog)
-    ConectarCablesIguales(catalog)
+
+    return primer_point, ultimo_country
 
 def loadPoints(catalog):
     """
-    Carga los eventos del archivo. Por cada evento se toma los datos necesarios:
-    instrumentalness,  danceability, tempo, energy, id del artista, id de la pista, 
-    y fecha de publicación.
+    Carga los Landing Points del archivo. Por cada Landing Point se toma los datos
+    necesarios: el id del Landing Point, la ubicación (ciudad y país), la latitud
+    y la longitud.
     """
     videosfile = cf.data_dir + 'landing_points.csv'
     
     input_file = csv.DictReader(open(videosfile, encoding='utf-8'))
+    i = 1
     for point in input_file:
         cada_point = {"landing_point_id": point["landing_point_id"],
                     "location": point["name"].split(","),
                     "latitude": float(point["latitude"]),
-                    "longitude": float(point["longitude"]),
-                    "country": (point["name"].split(","))[-1]          
+                    "longitude": float(point["longitude"]),       
                     }       
-
-        model.addPoint(catalog, cada_point)
+        if i == 1:
+            primer_point = cada_point  
+            model.addPoint(catalog, cada_point)
+        else:
+            model.addPoint(catalog, cada_point)
+        i += 1
+    return primer_point
 
 def loadConexiones(catalog):
     """
-    Carga los eventos del archivo. Por cada evento se toma los datos necesarios:
-    instrumentalness,  danceability, tempo, energy, id del artista, id de la pista, 
-    y fecha de publicación.
+    Carga cada conexión del archivo. Por cada conexión se toma los datos necesarios:
+    origen, destino, cable_name y capacidad.
     """
     videosfile = cf.data_dir + 'connections.csv'
     
@@ -83,35 +88,108 @@ def loadConexiones(catalog):
             cada_conexion = {"origin": conexion["origin"],
                         "destination": conexion["destination"],
                         "cable_name": conexion["cable_name"],
-                        "capacityTBPS":float(conexion["capacityTBPS"])
+                        "capacityTBPS": float(conexion["capacityTBPS"])
                         }       
         i += 1
         model.addConexion(catalog, cada_conexion)
 
-
-def loadCountries(catalog):
-    """
-    Carga los eventos del archivo. Por cada evento se toma los datos necesarios:
-    instrumentalness,  danceability, tempo, energy, id del artista, id de la pista, 
-    y fecha de publicación.
-    """
+"""
+def loadCountries1(catalog):
+    
+    Carga los países del archivo. Por cada país se toma los datos necesarios:
+    nombre del país, nombre de la capital, latitud de la capital y longitud de la capital
+    
     videosfile = cf.data_dir + 'countries.csv'
     
     input_file = csv.DictReader(open(videosfile, encoding='utf-8-sig'))
+    #rows = list(input_file)
+    #size = len(rows)
+    #print(size)
+    i = 1
     for country in input_file:
+        print(country)
+        #print(size)
+        #
         if country["CountryName"] == "":
+            print("Hola")
             pass
         else:
             cada_country = {"country": country["CountryName"],
                         "capital": country["CapitalName"],
                         "latitude": float(country["CapitalLatitude"]),
                         "longitude": float(country["CapitalLongitude"]),
-                        }       
+                        "population": country["Population"],
+                        "users": country["Internet users"]
+                        }      
+            if i == 260-5:
+                print("ENTRÓ")
+                ultimo_country = cada_country
+                model.addCountry(catalog, cada_country)
+            else:
+                model.addCountry(catalog, cada_country)
+            i += 1
 
-        model.addCountry(catalog, cada_country)
+    #return ultimo_country
+"""
+
+def loadCountries(catalog):
+    """
+    Carga los países del archivo. Por cada país se toma los datos necesarios:
+    nombre del país, nombre de la capital, latitud de la capital y longitud de la capital
+    """
+    videosfile = cf.data_dir + 'countries.csv'
+    input_file = csv.DictReader(open(videosfile, encoding='utf-8'))
+
+    rows = list(input_file)
+    size = len(rows)
+    for i, country in enumerate(rows):
+        cada_country = {"country": country["CountryName"],
+                    "capital": country["CapitalName"],
+                    "latitude": float(country["CapitalLatitude"]),
+                    "longitude": float(country["CapitalLongitude"]),
+                    "population": country["Population"],
+                    "users": country["Internet users"]
+                    }      
+        if i == size-1:
+            ultimo_country = cada_country
+            model.addCountry(catalog, cada_country)
+        else:
+            model.addCountry(catalog, cada_country)
+
+    return ultimo_country
 
 def ConectarPointsIguales(catalog):
     model.ConectarPointsIguales(catalog)
 
 def ConectarCablesIguales(catalog):
     model.ConectarCablesIguales(catalog)
+
+
+
+def TotalVertices(catalog):
+    return model.TotalVertices(catalog)
+
+def TotalEdges(catalog):
+    return model.TotalEdges(catalog)
+
+def TotalCountries(catalog):
+    return model.TotalCountries(catalog)
+
+def connectedComponents(catalog):
+    """
+    Numero de componentes conectados
+    """
+    return model.connectedComponents(catalog)
+
+def sameComponent(catalog, vert1, vert2):
+    return model.sameComponent(catalog, vert1, vert2)
+
+def getPointID(catalog, landing_point):
+    return model.getPointID(catalog, landing_point)
+
+def minExpansion(catalog):
+    return model.minExpansion(catalog)
+
+def affectedCountries(catalog, point):
+    return model.affectedCountries(catalog, point)
+
