@@ -93,45 +93,6 @@ def loadConexiones(catalog):
         i += 1
         model.addConexion(catalog, cada_conexion)
 
-"""
-def loadCountries1(catalog):
-    
-    Carga los países del archivo. Por cada país se toma los datos necesarios:
-    nombre del país, nombre de la capital, latitud de la capital y longitud de la capital
-    
-    videosfile = cf.data_dir + 'countries.csv'
-    
-    input_file = csv.DictReader(open(videosfile, encoding='utf-8-sig'))
-    #rows = list(input_file)
-    #size = len(rows)
-    #print(size)
-    i = 1
-    for country in input_file:
-        print(country)
-        #print(size)
-        #
-        if country["CountryName"] == "":
-            print("Hola")
-            pass
-        else:
-            cada_country = {"country": country["CountryName"],
-                        "capital": country["CapitalName"],
-                        "latitude": float(country["CapitalLatitude"]),
-                        "longitude": float(country["CapitalLongitude"]),
-                        "population": country["Population"],
-                        "users": country["Internet users"]
-                        }      
-            if i == 260-5:
-                print("ENTRÓ")
-                ultimo_country = cada_country
-                model.addCountry(catalog, cada_country)
-            else:
-                model.addCountry(catalog, cada_country)
-            i += 1
-
-    #return ultimo_country
-"""
-
 def loadCountries(catalog):
     """
     Carga los países del archivo. Por cada país se toma los datos necesarios:
@@ -192,4 +153,3 @@ def minExpansion(catalog):
 
 def affectedCountries(catalog, point):
     return model.affectedCountries(catalog, point)
-
