@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5e310908e9014fd39e1583a1f1ad6c13 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_5e310908e9014fd39e1583a1f1ad6c13" ></div>
+        
+</body>
+<script>    
+    
+            var map_5e310908e9014fd39e1583a1f1ad6c13 = L.map(
+                "map_5e310908e9014fd39e1583a1f1ad6c13",
+                {
+                    center: [40.0, 20.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1c06c95bbfd542f5aa5baad2516f5250 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_f56da65c26fd41f48f45933ac68a320c = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_a86a5a3d273c48138aa639c028bec13e = L.circle(
+                [26.350323, -80.088944],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_bbd4d4cfcbb440878b9d9bffd06a2b65 = L.marker(
+                [26.350323, -80.088944],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_6311f433ee6d403aafd642f21f3bc088 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9a6840e1d57748e59a1906a1f7a93b26 = $(`<div id="html_9a6840e1d57748e59a1906a1f7a93b26" style="width: 100.0%; height: 100.0%;"><i>Boca Raton, United States</i></div>`)[0];
+            popup_6311f433ee6d403aafd642f21f3bc088.setContent(html_9a6840e1d57748e59a1906a1f7a93b26);
+        
+
+        marker_bbd4d4cfcbb440878b9d9bffd06a2b65.bindPopup(popup_6311f433ee6d403aafd642f21f3bc088)
+        ;
+
+        
+    
+    
+            marker_bbd4d4cfcbb440878b9d9bffd06a2b65.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7f93b58085054f04b7dcb990c1dfbbe1 = L.polyline(
+                [[10.940462, -74.779756], [26.350323, -80.088944]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_5cb06ceb01bb4d0a97a1c72714215680 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b11ef16b4a6641af815251dc9008fa2a = $(`<div id="html_b11ef16b4a6641af815251dc9008fa2a" style="width: 100.0%; height: 100.0%;">1801.8</div>`)[0];
+            popup_5cb06ceb01bb4d0a97a1c72714215680.setContent(html_b11ef16b4a6641af815251dc9008fa2a);
+        
+
+        poly_line_7f93b58085054f04b7dcb990c1dfbbe1.bindPopup(popup_5cb06ceb01bb4d0a97a1c72714215680)
+        ;
+
+        
+    
+    
+            var circle_bc071fb7720e408280a6f6e43c5310f7 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_eea3c0345f5e416d8e3f42a916455496 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_f11965f1c11649159242599e4878cc0c = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_f61a855b5c2241e2902e5a61643199f5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0589c658c62b474dac8d1d626c7c639c = $(`<div id="html_0589c658c62b474dac8d1d626c7c639c" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_f61a855b5c2241e2902e5a61643199f5.setContent(html_0589c658c62b474dac8d1d626c7c639c);
+        
+
+        marker_f11965f1c11649159242599e4878cc0c.bindPopup(popup_f61a855b5c2241e2902e5a61643199f5)
+        ;
+
+        
+    
+    
+            marker_f11965f1c11649159242599e4878cc0c.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_1c82428ec0f1458ba1f0ecbd22d87bc6 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_c75bdee04d9c412ab66e347febf09aec = L.popup({"maxWidth": "100%"});
+
+        
+            var html_744d7b52082f4b2b9217fe7ad6e1df8f = $(`<div id="html_744d7b52082f4b2b9217fe7ad6e1df8f" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_c75bdee04d9c412ab66e347febf09aec.setContent(html_744d7b52082f4b2b9217fe7ad6e1df8f);
+        
+
+        poly_line_1c82428ec0f1458ba1f0ecbd22d87bc6.bindPopup(popup_c75bdee04d9c412ab66e347febf09aec)
+        ;
+
+        
+    
+    
+            var circle_5280a4446d644ac69628c3a1edb294e4 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_1ecc7fdbbee84010aa330a52d8de9029 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_8faaff11fcfc4b7a9f84ac22ea9a3628 = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_e70613d1b5c64121bf65c8ac2c9dc092 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_480e80dfa09d4f60b2de08eb374a9ca7 = $(`<div id="html_480e80dfa09d4f60b2de08eb374a9ca7" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_e70613d1b5c64121bf65c8ac2c9dc092.setContent(html_480e80dfa09d4f60b2de08eb374a9ca7);
+        
+
+        marker_8faaff11fcfc4b7a9f84ac22ea9a3628.bindPopup(popup_e70613d1b5c64121bf65c8ac2c9dc092)
+        ;
+
+        
+    
+    
+            marker_8faaff11fcfc4b7a9f84ac22ea9a3628.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_fc92258c42354b0f80cc5b9141174e68 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_ceaf6b3b78e44e9887c42ba389a4de12 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_10aa14236e9a4f9c840ac6f8421e3310 = $(`<div id="html_10aa14236e9a4f9c840ac6f8421e3310" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_ceaf6b3b78e44e9887c42ba389a4de12.setContent(html_10aa14236e9a4f9c840ac6f8421e3310);
+        
+
+        poly_line_fc92258c42354b0f80cc5b9141174e68.bindPopup(popup_ceaf6b3b78e44e9887c42ba389a4de12)
+        ;
+
+        
+    
+    
+            var circle_e24312624a784bfa88b463ca1aa419a8 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_919ea39223b24dc4922c56457d92e542 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_d8ceebf97ae34a85bc98ffae7f1ccc66 = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_b90bc4a1d0b9488b947831bbbcf15a86 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8970a4bf77e1465486633c780e84acd0 = $(`<div id="html_8970a4bf77e1465486633c780e84acd0" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_b90bc4a1d0b9488b947831bbbcf15a86.setContent(html_8970a4bf77e1465486633c780e84acd0);
+        
+
+        marker_d8ceebf97ae34a85bc98ffae7f1ccc66.bindPopup(popup_b90bc4a1d0b9488b947831bbbcf15a86)
+        ;
+
+        
+    
+    
+            marker_d8ceebf97ae34a85bc98ffae7f1ccc66.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_e125da0e8d674aee9bf8182434c42ac1 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_a36c225404c74b878eabda4c8f9003e6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_12b7972d094744e1bf65bfb4ce273863 = $(`<div id="html_12b7972d094744e1bf65bfb4ce273863" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_a36c225404c74b878eabda4c8f9003e6.setContent(html_12b7972d094744e1bf65bfb4ce273863);
+        
+
+        poly_line_e125da0e8d674aee9bf8182434c42ac1.bindPopup(popup_a36c225404c74b878eabda4c8f9003e6)
+        ;
+
+        
+    
+    
+            var circle_14d022779c9f41dfa3185e81f8186058 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_109132a7399540fabd7c1fe0e2d9ddcc = L.circle(
+                [4.6, -74.083333],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_9023486e590848ac96786822c041678f = L.marker(
+                [4.6, -74.083333],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_96d8e8eed4494b68af75440a3094e9ce = L.popup({"maxWidth": "100%"});
+
+        
+            var html_00124c546dc54a1a846c995678db9545 = $(`<div id="html_00124c546dc54a1a846c995678db9545" style="width: 100.0%; height: 100.0%;"><i>Bogota, Colombia</i></div>`)[0];
+            popup_96d8e8eed4494b68af75440a3094e9ce.setContent(html_00124c546dc54a1a846c995678db9545);
+        
+
+        marker_9023486e590848ac96786822c041678f.bindPopup(popup_96d8e8eed4494b68af75440a3094e9ce)
+        ;
+
+        
+    
+    
+            marker_9023486e590848ac96786822c041678f.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_308937598635487b84ef0e3b5967da6a = L.polyline(
+                [[10.940462, -74.779756], [4.6, -74.083333]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_af558ce0f7024e13b21d6e5357910afc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3716693c9b0e4ba8b9c922b655cf7432 = $(`<div id="html_3716693c9b0e4ba8b9c922b655cf7432" style="width: 100.0%; height: 100.0%;">709.2</div>`)[0];
+            popup_af558ce0f7024e13b21d6e5357910afc.setContent(html_3716693c9b0e4ba8b9c922b655cf7432);
+        
+
+        poly_line_308937598635487b84ef0e3b5967da6a.bindPopup(popup_af558ce0f7024e13b21d6e5357910afc)
+        ;
+
+        
+    
+    
+            var circle_f088c661dc024162b753bcb1dd3b38dc = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_0a705e0bcc1c4eec999c865cca03757e = L.circle(
+                [12.414142, -69.878685],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_744415f64ad04e8984a6692b535bdea3 = L.marker(
+                [12.414142, -69.878685],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_f19b00fba67c4f7eb1d1cc9be3038764 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_782a3a22fbf4422d944c0374dcb81c5c = $(`<div id="html_782a3a22fbf4422d944c0374dcb81c5c" style="width: 100.0%; height: 100.0%;"><i>Baby Beach, Aruba</i></div>`)[0];
+            popup_f19b00fba67c4f7eb1d1cc9be3038764.setContent(html_782a3a22fbf4422d944c0374dcb81c5c);
+        
+
+        marker_744415f64ad04e8984a6692b535bdea3.bindPopup(popup_f19b00fba67c4f7eb1d1cc9be3038764)
+        ;
+
+        
+    
+    
+            marker_744415f64ad04e8984a6692b535bdea3.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_0d323afe42c8430383c815856e740ed5 = L.polyline(
+                [[10.940462, -74.779756], [12.414142, -69.878685]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_dcceaa1200ac4fe4bd95f1cbe3c63018 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fe9dda81443b4650ac9c684dfa27e0a9 = $(`<div id="html_fe9dda81443b4650ac9c684dfa27e0a9" style="width: 100.0%; height: 100.0%;">558.3</div>`)[0];
+            popup_dcceaa1200ac4fe4bd95f1cbe3c63018.setContent(html_fe9dda81443b4650ac9c684dfa27e0a9);
+        
+
+        poly_line_0d323afe42c8430383c815856e740ed5.bindPopup(popup_dcceaa1200ac4fe4bd95f1cbe3c63018)
+        ;
+
+        
+    
+    
+            var circle_6076a47958ea4b178d0a9379427e480e = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_cc72bbdcb1894fff8ab22f2659ca2cae = L.circle(
+                [9.35372, -79.900028],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_585341e46f9e45139b00d2e472acb51b = L.marker(
+                [9.35372, -79.900028],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_714b10f4ae424038bbf4ce3044a113df = L.popup({"maxWidth": "100%"});
+
+        
+            var html_569e46b4df0d4cd19a80cf41019cb19a = $(`<div id="html_569e46b4df0d4cd19a80cf41019cb19a" style="width: 100.0%; height: 100.0%;"><i>Colon, Panama</i></div>`)[0];
+            popup_714b10f4ae424038bbf4ce3044a113df.setContent(html_569e46b4df0d4cd19a80cf41019cb19a);
+        
+
+        marker_585341e46f9e45139b00d2e472acb51b.bindPopup(popup_714b10f4ae424038bbf4ce3044a113df)
+        ;
+
+        
+    
+    
+            marker_585341e46f9e45139b00d2e472acb51b.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_bb12a410b67e4fdd85e4cc4f64994ae7 = L.polyline(
+                [[10.940462, -74.779756], [9.35372, -79.900028]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_0f8cb06ade8944a6bf9212672a9702db = L.popup({"maxWidth": "100%"});
+
+        
+            var html_73fd8f2fa2aa4ee3aa7dc75e80f60f20 = $(`<div id="html_73fd8f2fa2aa4ee3aa7dc75e80f60f20" style="width: 100.0%; height: 100.0%;">587.5</div>`)[0];
+            popup_0f8cb06ade8944a6bf9212672a9702db.setContent(html_73fd8f2fa2aa4ee3aa7dc75e80f60f20);
+        
+
+        poly_line_bb12a410b67e4fdd85e4cc4f64994ae7.bindPopup(popup_0f8cb06ade8944a6bf9212672a9702db)
+        ;
+
+        
+    
+    
+            var circle_4f711013518f4e619d00ee50af7d6c3c = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_1afa96a9caab45c18d26952d2bde31ac = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_c6b9a2a8f24748728b0fa343557ae3c9 = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_4cbe56f418184dcb932b7bed4dc74f80 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3983c23934124ddfa179ea36bdfa3b61 = $(`<div id="html_3983c23934124ddfa179ea36bdfa3b61" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_4cbe56f418184dcb932b7bed4dc74f80.setContent(html_3983c23934124ddfa179ea36bdfa3b61);
+        
+
+        marker_c6b9a2a8f24748728b0fa343557ae3c9.bindPopup(popup_4cbe56f418184dcb932b7bed4dc74f80)
+        ;
+
+        
+    
+    
+            marker_c6b9a2a8f24748728b0fa343557ae3c9.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_2aec9b7067c8481ca3df963cf5dd31a4 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_1a4ea8dd7bff460db0123478b11dded8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_046d35668cab4feca9fbb1dc12bd2d5d = $(`<div id="html_046d35668cab4feca9fbb1dc12bd2d5d" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_1a4ea8dd7bff460db0123478b11dded8.setContent(html_046d35668cab4feca9fbb1dc12bd2d5d);
+        
+
+        poly_line_2aec9b7067c8481ca3df963cf5dd31a4.bindPopup(popup_1a4ea8dd7bff460db0123478b11dded8)
+        ;
+
+        
+    
+    
+            var circle_598d577b31994abea69f52567ce3336b = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_91c7034d75da482596afb76a75ac55e1 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_3e71c73573d643139ced17dd847defd4 = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_49614db292744d60bf2e2cfe5ffa3b19 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5c760e28d35649ffaa6da49c206eb28a = $(`<div id="html_5c760e28d35649ffaa6da49c206eb28a" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_49614db292744d60bf2e2cfe5ffa3b19.setContent(html_5c760e28d35649ffaa6da49c206eb28a);
+        
+
+        marker_3e71c73573d643139ced17dd847defd4.bindPopup(popup_49614db292744d60bf2e2cfe5ffa3b19)
+        ;
+
+        
+    
+    
+            marker_3e71c73573d643139ced17dd847defd4.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_9ca1adc3f8164264b1e77dd832d33204 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_fdf29dd581644b1eb984da5523abf192 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_600a548be73549a69c5662051c60926a = $(`<div id="html_600a548be73549a69c5662051c60926a" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_fdf29dd581644b1eb984da5523abf192.setContent(html_600a548be73549a69c5662051c60926a);
+        
+
+        poly_line_9ca1adc3f8164264b1e77dd832d33204.bindPopup(popup_fdf29dd581644b1eb984da5523abf192)
+        ;
+
+        
+    
+    
+            var circle_0c2f3f81014c40bdba360735130b1ee4 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_a684d93cecdf4f28b31405005573b33a = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_78a90a93fd08478bb3e009cd8a84d7cc = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_e844b29ed71545a0babc6c982a18e6f1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3310328d1f724673a0ce936858f00f85 = $(`<div id="html_3310328d1f724673a0ce936858f00f85" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_e844b29ed71545a0babc6c982a18e6f1.setContent(html_3310328d1f724673a0ce936858f00f85);
+        
+
+        marker_78a90a93fd08478bb3e009cd8a84d7cc.bindPopup(popup_e844b29ed71545a0babc6c982a18e6f1)
+        ;
+
+        
+    
+    
+            marker_78a90a93fd08478bb3e009cd8a84d7cc.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_ddabc2df497245869fc46d7bd825d931 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_43d0488f68784d3f83a7ec5370834f52 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c9e503d6d7f8486889a4e5f5d8e7b177 = $(`<div id="html_c9e503d6d7f8486889a4e5f5d8e7b177" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_43d0488f68784d3f83a7ec5370834f52.setContent(html_c9e503d6d7f8486889a4e5f5d8e7b177);
+        
+
+        poly_line_ddabc2df497245869fc46d7bd825d931.bindPopup(popup_43d0488f68784d3f83a7ec5370834f52)
+        ;
+
+        
+    
+    
+            var circle_62e33367cc694874a226a9715c26d1ce = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_cf5b11bfbf614719845be149a4f7f340 = L.circle(
+                [4.6, -74.083333],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_62b0301edbb34a39ac1a0cb4d05bbf8a = L.marker(
+                [4.6, -74.083333],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_f7574f476985464086f0930831afdc92 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_539479eafc6c46bcaec332b8fcd7410b = $(`<div id="html_539479eafc6c46bcaec332b8fcd7410b" style="width: 100.0%; height: 100.0%;"><i>Bogota, Colombia</i></div>`)[0];
+            popup_f7574f476985464086f0930831afdc92.setContent(html_539479eafc6c46bcaec332b8fcd7410b);
+        
+
+        marker_62b0301edbb34a39ac1a0cb4d05bbf8a.bindPopup(popup_f7574f476985464086f0930831afdc92)
+        ;
+
+        
+    
+    
+            marker_62b0301edbb34a39ac1a0cb4d05bbf8a.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_94d31d20127649f09d644dac6bfc153c = L.polyline(
+                [[10.940462, -74.779756], [4.6, -74.083333]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_6553dabe11c7474887585f54af04c61f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6054a9edc96e4c62875160c52e84dca7 = $(`<div id="html_6054a9edc96e4c62875160c52e84dca7" style="width: 100.0%; height: 100.0%;">709.2</div>`)[0];
+            popup_6553dabe11c7474887585f54af04c61f.setContent(html_6054a9edc96e4c62875160c52e84dca7);
+        
+
+        poly_line_94d31d20127649f09d644dac6bfc153c.bindPopup(popup_6553dabe11c7474887585f54af04c61f)
+        ;
+
+        
+    
+    
+            var circle_bdd3a5f3f2474ab7b4601775e4b1674d = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_39226b5587f54ce1a99c337d75aa285c = L.circle(
+                [-18.47337, -70.306749],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_1bf6e62828f347a78318457fad09e720 = L.marker(
+                [-18.47337, -70.306749],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_f58e3139fbe747349ef4ca9ef6c08327 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fecd19bc504545328816af2f5c8cf536 = $(`<div id="html_fecd19bc504545328816af2f5c8cf536" style="width: 100.0%; height: 100.0%;"><i>Arica, Chile</i></div>`)[0];
+            popup_f58e3139fbe747349ef4ca9ef6c08327.setContent(html_fecd19bc504545328816af2f5c8cf536);
+        
+
+        marker_1bf6e62828f347a78318457fad09e720.bindPopup(popup_f58e3139fbe747349ef4ca9ef6c08327)
+        ;
+
+        
+    
+    
+            marker_1bf6e62828f347a78318457fad09e720.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_565c3d646fbf4a338f4aa8e3cc91663a = L.polyline(
+                [[10.940462, -74.779756], [-18.47337, -70.306749]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_e45a1f34e91c4279b128e1b075cb4a54 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9fac5521bf354edcab26ab2d831bb4b3 = $(`<div id="html_9fac5521bf354edcab26ab2d831bb4b3" style="width: 100.0%; height: 100.0%;">3307.3</div>`)[0];
+            popup_e45a1f34e91c4279b128e1b075cb4a54.setContent(html_9fac5521bf354edcab26ab2d831bb4b3);
+        
+
+        poly_line_565c3d646fbf4a338f4aa8e3cc91663a.bindPopup(popup_e45a1f34e91c4279b128e1b075cb4a54)
+        ;
+
+        
+    
+    
+            var circle_29762c1cabff4bd39abbffebe06dc3f4 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_2f76931dfdb94fb1a846dba8dedaf366 = L.circle(
+                [26.350323, -80.088944],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_32125ab6278b4b69967e59eaacb0c633 = L.marker(
+                [26.350323, -80.088944],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_1497f977282748fa9e2dc6a3e0083aa1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_35b56ba8f7544417b026a567e152ef36 = $(`<div id="html_35b56ba8f7544417b026a567e152ef36" style="width: 100.0%; height: 100.0%;"><i>Boca Raton, United States</i></div>`)[0];
+            popup_1497f977282748fa9e2dc6a3e0083aa1.setContent(html_35b56ba8f7544417b026a567e152ef36);
+        
+
+        marker_32125ab6278b4b69967e59eaacb0c633.bindPopup(popup_1497f977282748fa9e2dc6a3e0083aa1)
+        ;
+
+        
+    
+    
+            marker_32125ab6278b4b69967e59eaacb0c633.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7b29ee5c41da477c9c56bf4339a2aba4 = L.polyline(
+                [[10.940462, -74.779756], [26.350323, -80.088944]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_3b6fdf4d8c2e4d798b2052596f941d38 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_945782368421494d84c2e4663d731768 = $(`<div id="html_945782368421494d84c2e4663d731768" style="width: 100.0%; height: 100.0%;">1801.8</div>`)[0];
+            popup_3b6fdf4d8c2e4d798b2052596f941d38.setContent(html_945782368421494d84c2e4663d731768);
+        
+
+        poly_line_7b29ee5c41da477c9c56bf4339a2aba4.bindPopup(popup_3b6fdf4d8c2e4d798b2052596f941d38)
+        ;
+
+        
+    
+    
+            var circle_6ca50e0ea8d14f72939270a878ce8f9b = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_29a9780748634d5b9c33f7a0a7187a92 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_de5c6b29c949415a97812776563a5489 = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_32f7c3f56b634345848413b77e381f3b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_066559d596514343931446accf414aa9 = $(`<div id="html_066559d596514343931446accf414aa9" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_32f7c3f56b634345848413b77e381f3b.setContent(html_066559d596514343931446accf414aa9);
+        
+
+        marker_de5c6b29c949415a97812776563a5489.bindPopup(popup_32f7c3f56b634345848413b77e381f3b)
+        ;
+
+        
+    
+    
+            marker_de5c6b29c949415a97812776563a5489.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_d1b120c970284ec1b3e452027385240c = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_665b0ec25c064e38b5b1fe65ac47a52b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_775261fe012949cfa58ce62cb4850562 = $(`<div id="html_775261fe012949cfa58ce62cb4850562" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_665b0ec25c064e38b5b1fe65ac47a52b.setContent(html_775261fe012949cfa58ce62cb4850562);
+        
+
+        poly_line_d1b120c970284ec1b3e452027385240c.bindPopup(popup_665b0ec25c064e38b5b1fe65ac47a52b)
+        ;
+
+        
+    
+    
+            var circle_1b3ccff81e7945c18ea692497ee301a1 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_23d2af2640eb4be7bc4ac5f8feb4882a = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_586afb7bdd0641618dc7045bd975edbd = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_25ceb91474534bda8b32c18d6ea7d166 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7f5d27d0d48a42f487a41208334a0e7c = $(`<div id="html_7f5d27d0d48a42f487a41208334a0e7c" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_25ceb91474534bda8b32c18d6ea7d166.setContent(html_7f5d27d0d48a42f487a41208334a0e7c);
+        
+
+        marker_586afb7bdd0641618dc7045bd975edbd.bindPopup(popup_25ceb91474534bda8b32c18d6ea7d166)
+        ;
+
+        
+    
+    
+            marker_586afb7bdd0641618dc7045bd975edbd.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_43978dd6a995432daf9006673fd1b536 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_5d40e5075ce545c5aa83ebdc94934443 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e9f2a7a0eee24183a6c2426b950d5e7f = $(`<div id="html_e9f2a7a0eee24183a6c2426b950d5e7f" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_5d40e5075ce545c5aa83ebdc94934443.setContent(html_e9f2a7a0eee24183a6c2426b950d5e7f);
+        
+
+        poly_line_43978dd6a995432daf9006673fd1b536.bindPopup(popup_5d40e5075ce545c5aa83ebdc94934443)
+        ;
+
+        
+    
+    
+            var circle_0ff727511f8f469eb59e24def779bd3f = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_46dabe52a2c643ea8f61673661a5de9e = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_e5da9efa614e4d76a9244215407172f7 = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_682f84bbd53448ee97bb4b72c8d62799 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fa834941b0424619bc90fe6748dc4998 = $(`<div id="html_fa834941b0424619bc90fe6748dc4998" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_682f84bbd53448ee97bb4b72c8d62799.setContent(html_fa834941b0424619bc90fe6748dc4998);
+        
+
+        marker_e5da9efa614e4d76a9244215407172f7.bindPopup(popup_682f84bbd53448ee97bb4b72c8d62799)
+        ;
+
+        
+    
+    
+            marker_e5da9efa614e4d76a9244215407172f7.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_08720ac234c74e2788826c20d6ef5897 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_5b77154d985b4fa5b7e34b0f24aa2d1c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_17c1524022a44272a6add1f24213b339 = $(`<div id="html_17c1524022a44272a6add1f24213b339" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_5b77154d985b4fa5b7e34b0f24aa2d1c.setContent(html_17c1524022a44272a6add1f24213b339);
+        
+
+        poly_line_08720ac234c74e2788826c20d6ef5897.bindPopup(popup_5b77154d985b4fa5b7e34b0f24aa2d1c)
+        ;
+
+        
+    
+    
+            var circle_f60350dc32d74fc5acc71c2efb8b7973 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_3bf92087494140c19107098b8c2c0f38 = L.circle(
+                [4.6, -74.083333],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_88f6729281ba4742b2cc4364dcd1ffd7 = L.marker(
+                [4.6, -74.083333],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_799892d0fe414c10be1ab261b4cb25f2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_864ad7ca797d4046b3f6875bf1432946 = $(`<div id="html_864ad7ca797d4046b3f6875bf1432946" style="width: 100.0%; height: 100.0%;"><i>Bogota, Colombia</i></div>`)[0];
+            popup_799892d0fe414c10be1ab261b4cb25f2.setContent(html_864ad7ca797d4046b3f6875bf1432946);
+        
+
+        marker_88f6729281ba4742b2cc4364dcd1ffd7.bindPopup(popup_799892d0fe414c10be1ab261b4cb25f2)
+        ;
+
+        
+    
+    
+            marker_88f6729281ba4742b2cc4364dcd1ffd7.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_528c9e4339964949a52b23585bbb6203 = L.polyline(
+                [[10.940462, -74.779756], [4.6, -74.083333]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_7b2c30c99f9e4068a44feea62c405d5f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_387a31d7045340e09e6ec307b8a615dc = $(`<div id="html_387a31d7045340e09e6ec307b8a615dc" style="width: 100.0%; height: 100.0%;">709.2</div>`)[0];
+            popup_7b2c30c99f9e4068a44feea62c405d5f.setContent(html_387a31d7045340e09e6ec307b8a615dc);
+        
+
+        poly_line_528c9e4339964949a52b23585bbb6203.bindPopup(popup_7b2c30c99f9e4068a44feea62c405d5f)
+        ;
+
+        
+    
+    
+            var circle_e2098df6dc6f473a97a5904ea5e01ef8 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_47c9a83902654817ac65276d6c87c65b = L.circle(
+                [21.095725, -86.767552],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_d48321890c4747bc96a17a73b56adfdd = L.marker(
+                [21.095725, -86.767552],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_2d35172ef6df42e79ee3e6f5cd7ccec4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9cf0136094344bc796409e1870f99d54 = $(`<div id="html_9cf0136094344bc796409e1870f99d54" style="width: 100.0%; height: 100.0%;"><i>Cancún, Mexico</i></div>`)[0];
+            popup_2d35172ef6df42e79ee3e6f5cd7ccec4.setContent(html_9cf0136094344bc796409e1870f99d54);
+        
+
+        marker_d48321890c4747bc96a17a73b56adfdd.bindPopup(popup_2d35172ef6df42e79ee3e6f5cd7ccec4)
+        ;
+
+        
+    
+    
+            marker_d48321890c4747bc96a17a73b56adfdd.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_0895ef2ede96417a9317298c11b76d9e = L.polyline(
+                [[10.940462, -74.779756], [21.095725, -86.767552]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_ecb8232207794a8598a2b880900eccbe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ac6e2909286c4b76af6fbd4a883318f7 = $(`<div id="html_ac6e2909286c4b76af6fbd4a883318f7" style="width: 100.0%; height: 100.0%;">1706.1</div>`)[0];
+            popup_ecb8232207794a8598a2b880900eccbe.setContent(html_ac6e2909286c4b76af6fbd4a883318f7);
+        
+
+        poly_line_0895ef2ede96417a9317298c11b76d9e.bindPopup(popup_ecb8232207794a8598a2b880900eccbe)
+        ;
+
+        
+    
+    
+            var circle_8a9678608f7a45c3abfc7103626c4e7b = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_6380ba2d13374dd5b3ed4221c14026fa = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_a9c7395236564ebe8a129be169e0cf32 = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_4c0c7c03594f4d2b861849ccb5263bff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_02a9770e05d84ee7b0c4b722689efea3 = $(`<div id="html_02a9770e05d84ee7b0c4b722689efea3" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_4c0c7c03594f4d2b861849ccb5263bff.setContent(html_02a9770e05d84ee7b0c4b722689efea3);
+        
+
+        marker_a9c7395236564ebe8a129be169e0cf32.bindPopup(popup_4c0c7c03594f4d2b861849ccb5263bff)
+        ;
+
+        
+    
+    
+            marker_a9c7395236564ebe8a129be169e0cf32.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_587dca18a9434cbda7c405bafe274f37 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_b2cd46f14c0b4e1a86c79e3eacaa863c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2f15654e10964327afbfe3348324e735 = $(`<div id="html_2f15654e10964327afbfe3348324e735" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_b2cd46f14c0b4e1a86c79e3eacaa863c.setContent(html_2f15654e10964327afbfe3348324e735);
+        
+
+        poly_line_587dca18a9434cbda7c405bafe274f37.bindPopup(popup_b2cd46f14c0b4e1a86c79e3eacaa863c)
+        ;
+
+        
+    
+    
+            var circle_5dfc0da6497f49759a8230dfa8a93f4d = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_4f9e56c67ab24be89defd2bc4b583e5e = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_d74baba99deb405f93aba4d008868bed = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_7defd663a77842969aa20972a31e42d6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_26301d253be441ed98bcb22aa22e77d9 = $(`<div id="html_26301d253be441ed98bcb22aa22e77d9" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_7defd663a77842969aa20972a31e42d6.setContent(html_26301d253be441ed98bcb22aa22e77d9);
+        
+
+        marker_d74baba99deb405f93aba4d008868bed.bindPopup(popup_7defd663a77842969aa20972a31e42d6)
+        ;
+
+        
+    
+    
+            marker_d74baba99deb405f93aba4d008868bed.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_6cf5a177dae04192b3e5ab0a6aa5c7df = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_211038e3880847298123ce9e3e0c8c2a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9bd79c7e17594241b1cd6fda98dbaf35 = $(`<div id="html_9bd79c7e17594241b1cd6fda98dbaf35" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_211038e3880847298123ce9e3e0c8c2a.setContent(html_9bd79c7e17594241b1cd6fda98dbaf35);
+        
+
+        poly_line_6cf5a177dae04192b3e5ab0a6aa5c7df.bindPopup(popup_211038e3880847298123ce9e3e0c8c2a)
+        ;
+
+        
+    
+    
+            var circle_a974f40386764ba1aa192d24e563a003 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_b81ad3152c904201aa13e7f31731e37a = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_0c85b5b290a140fd8f208b7b09676125 = L.marker(
+                [10.940462, -74.779756],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_d87fdee631234bf6abec3bc58aa92066 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1cd52133a3964cc0b1d319a8b6ffdac4 = $(`<div id="html_1cd52133a3964cc0b1d319a8b6ffdac4" style="width: 100.0%; height: 100.0%;"><i>Barranquilla, Colombia</i></div>`)[0];
+            popup_d87fdee631234bf6abec3bc58aa92066.setContent(html_1cd52133a3964cc0b1d319a8b6ffdac4);
+        
+
+        marker_0c85b5b290a140fd8f208b7b09676125.bindPopup(popup_d87fdee631234bf6abec3bc58aa92066)
+        ;
+
+        
+    
+    
+            marker_0c85b5b290a140fd8f208b7b09676125.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_99500cc4c2c94888b643152473779f04 = L.polyline(
+                [[10.940462, -74.779756], [10.940462, -74.779756]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_4d76250d305346c29208ef8774bc9076 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_78689d2a1e6243bfbecee8f02144f964 = $(`<div id="html_78689d2a1e6243bfbecee8f02144f964" style="width: 100.0%; height: 100.0%;">0.1</div>`)[0];
+            popup_4d76250d305346c29208ef8774bc9076.setContent(html_78689d2a1e6243bfbecee8f02144f964);
+        
+
+        poly_line_99500cc4c2c94888b643152473779f04.bindPopup(popup_4d76250d305346c29208ef8774bc9076)
+        ;
+
+        
+    
+    
+            var circle_9854f9b2f18348b38c342defe86049b4 = L.circle(
+                [10.940462, -74.779756],
+                {"bubblingMouseEvents": true, "color": "#000000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#000000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var circle_d4ccca1c0a1f4f04b95150747241334c = L.circle(
+                [4.6, -74.083333],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+            var marker_cca22e52d85f430ebb33bc4116e6d372 = L.marker(
+                [4.6, -74.083333],
+                {}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_1b3a6d0ac07b42f1bce807e6be7232ce = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e118b1b2b0da43169e884f22ee59ddfc = $(`<div id="html_e118b1b2b0da43169e884f22ee59ddfc" style="width: 100.0%; height: 100.0%;"><i>Bogota, Colombia</i></div>`)[0];
+            popup_1b3a6d0ac07b42f1bce807e6be7232ce.setContent(html_e118b1b2b0da43169e884f22ee59ddfc);
+        
+
+        marker_cca22e52d85f430ebb33bc4116e6d372.bindPopup(popup_1b3a6d0ac07b42f1bce807e6be7232ce)
+        ;
+
+        
+    
+    
+            marker_cca22e52d85f430ebb33bc4116e6d372.bindTooltip(
+                `<div>
+                     Cliquéame
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_ecada6b8b9224a4faf5907e81b14cdf5 = L.polyline(
+                [[10.940462, -74.779756], [4.6, -74.083333]],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff0000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5e310908e9014fd39e1583a1f1ad6c13);
+        
+    
+        var popup_dd62568503964a599185d27723b8254f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_659ad2b6831a4eee97233e2d554752ba = $(`<div id="html_659ad2b6831a4eee97233e2d554752ba" style="width: 100.0%; height: 100.0%;">709.2</div>`)[0];
+            popup_dd62568503964a599185d27723b8254f.setContent(html_659ad2b6831a4eee97233e2d554752ba);
+        
+
+        poly_line_ecada6b8b9224a4faf5907e81b14cdf5.bindPopup(popup_dd62568503964a599185d27723b8254f)
+        ;
+
+        
+    
+</script>

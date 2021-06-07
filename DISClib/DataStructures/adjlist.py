@@ -183,7 +183,7 @@ def edges(graph):
             for edge in lt.iterator(lstedge):
                 if (graph['directed']):
                     lt.addLast(lstresp, edge)
-                elif (not lt.isPresent(lstresp, edge)):
+                else:
                     lt.addLast(lstresp, edge)
         return lstresp
     except Exception as exp:

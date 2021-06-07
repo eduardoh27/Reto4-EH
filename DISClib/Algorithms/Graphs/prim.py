@@ -73,8 +73,8 @@ def prim(graph, search, v):
         map.put(search['distTo'], v, 0.0)
         pq.insert(search['pq'], v, 0.0)
         while (not pq.isEmpty(search['pq'])):
-            min = pq.delMin(search['pq'])
-            scan(graph, search, min)
+            mini = pq.delMin(search['pq'])
+            scan(graph, search, mini)
         return search
     except Exception as exp:
         error.reraise(exp, 'prim:prim')

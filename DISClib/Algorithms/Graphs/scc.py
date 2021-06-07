@@ -133,7 +133,7 @@ def connectedComponents(scc):
 
 def reverseGraph(graph):
     """
-        Retornar el reverso del grafo graph
+    Retornar el reverso del grafo graph
     """
     try:
         greverse = g.newGraph(size=g.numVertices(graph),
